@@ -1,0 +1,11 @@
+### Repository-level ignores for LienzoFiguras
+# Ignore the .continue placeholder directory or files used by some editors/tools
+.continue
+.vscode
+.vs
+
+# Common Visual Studio/VS Code artifacts (optional)
+# bin/
+# obj/
+# .vs/
+# .vscode/
