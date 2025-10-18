@@ -53,6 +53,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Figura.cs" />
+    <Compile Include="FiguraFactory.cs" />
+    <Compile Include="Rectangulo.cs" />
+    <Compile Include="Circulo.cs" />
+    <Compile Include="Linea.cs" />
+    <Compile Include="Triangulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

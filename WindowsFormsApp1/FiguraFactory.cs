@@ -1,28 +1,32 @@
-using System.Drawing;
+﻿using System;
 
 namespace WindowsFormsApp1
 {
     public static class FiguraFactory
     {
-        // CrearFigura ahora solo instancia según el tipo y no realiza validaciones.
-        // tipoFigura: "Rectangulo","Circulo","Linea","Triangulo"
+        
         public static Figura CrearFigura(string tipoFigura)
         {
             if (string.IsNullOrWhiteSpace(tipoFigura)) return null;
 
-            switch (tipoFigura)
+            var key = tipoFigura.Trim();
+            Figura figura = null;
+
+            if (string.Equals(key, "Rectangulo", StringComparison.OrdinalIgnoreCase))
+                figura = new Rectangulo();
+            else if (string.Equals(key, "Circulo", StringComparison.OrdinalIgnoreCase))
+                figura = new Circulo();
+            else if (string.Equals(key, "Linea", StringComparison.OrdinalIgnoreCase))
+                figura = new Linea();
+            else if (string.Equals(key, "Triangulo", StringComparison.OrdinalIgnoreCase))
+                figura = new Triangulo();
+
+            if (figura != null)
             {
-                case "Rectangulo":
-                    return new Rectangulo();
-                case "Circulo":
-                    return new Circulo();
-                case "Linea":
-                    return new Linea();
-                case "Triangulo":
-                    return new Triangulo();
-                default:
-                    return null;
+                figura.Nombre = key; 
             }
+
+            return figura;
         }
     }
 }
